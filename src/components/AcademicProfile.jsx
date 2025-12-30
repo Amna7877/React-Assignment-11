@@ -34,7 +34,7 @@ function AcademicProfile() {
     <main className="page">
       <header className="heading">
         <h1>Academic Profile</h1>
-        <p>Student data generated using React state</p>
+        <p>Student data generator App</p>
       </header>
 
       <section className="panel">

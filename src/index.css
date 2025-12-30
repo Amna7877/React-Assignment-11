@@ -5,47 +5,47 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+  background: #0f1445;
   color: #0f172a;
 }
 
 .page {
   max-width: 1100px;
   margin: auto;
-  padding: 80px 24px;
+  padding: 72px 20px;
 }
 
 .heading {
   color: #fff;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .heading h1 {
-  font-size: 42px;
+  font-size: clamp(28px, 4vw, 42px);
   font-weight: 700;
   margin: 0 0 8px;
 }
 
 .heading p {
-  font-size: 15px;
+  font-size: 14px;
   opacity: 0.85;
 }
 
 .panel {
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 32px;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: 28px;
   background: rgba(255, 255, 255, 0.06);
-  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 36px;
+  padding: 32px;
+  width: 100%;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 label {
@@ -65,6 +65,7 @@ input {
   color: #fff;
   font-size: 15px;
   outline: none;
+  width: 100%;
 }
 
 input::placeholder {
@@ -86,7 +87,7 @@ span {
 }
 
 button {
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 14px;
   font-size: 15px;
   font-weight: 600;
@@ -96,23 +97,21 @@ button {
   color: #fff;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
-}
-
-button:hover {
-  transform: translateY(-1px);
+  width: 100%;
 }
 
 .output {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   padding: 28px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 100%;
 }
 
 .output h3 {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   font-size: 20px;
   color: #1e1b4b;
 }
@@ -127,11 +126,36 @@ button:hover {
 }
 
 @media (max-width: 900px) {
-  .panel {
-    grid-template-columns: 1fr;
+  .page {
+    padding: 56px 18px;
   }
 
-  .heading h1 {
-    font-size: 34px;
+  .panel {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .output {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 40px 14px;
+  }
+
+  .heading {
+    margin-bottom: 24px;
+  }
+
+  .panel {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
   }
 }
