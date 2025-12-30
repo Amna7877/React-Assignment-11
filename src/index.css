@@ -1,13 +1,137 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+  color: #0f172a;
+}
+
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 24px;
+}
+
+.heading {
+  color: #fff;
+  margin-bottom: 36px;
+}
+
+.heading h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.heading p {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 36px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+input {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 23, 42, 0.6);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+input:focus {
+  border-color: #818cf8;
+}
+
+input.error {
+  border-color: #f87171;
+  background: rgba(127, 29, 29, 0.4);
+}
+
+span {
+  font-size: 12px;
+  color: #fca5a5;
+}
+
+button {
+  margin-top: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.output {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 28px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.output h3 {
+  margin: 0 0 18px;
+  font-size: 20px;
+  color: #1e1b4b;
+}
+
+.output p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.output strong {
+  color: #4338ca;
+}
+
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .heading h1 {
+    font-size: 34px;
+  }
 }
